@@ -34,19 +34,6 @@
     /* text-decoration: underline; */
     transform: scale(1.2);
 }
-
-
-/* .tagLine {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    white-space: nowrap;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-shadow: 20px 5px 6px rgba(0, 0, 0, 1.0);
-} */
 .tagLine {
     text-align: center;
     font-size: 1.4rem;

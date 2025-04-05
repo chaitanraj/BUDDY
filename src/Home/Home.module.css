@@ -1,3 +1,7 @@
+:root {
+  --typing-width: 17ch;
+}
+
 .tagwrapper{
   margin-top: 10vh;
   color: rgb(255, 255, 255);
@@ -113,4 +117,9 @@
   color: rgb(255, 255, 255);
  }
 
+}
+@media (max-width: 400px) {
+  .heading {
+    font-size: 2.5rem; /* Reduce font-size on small screens */
+  }
 }
