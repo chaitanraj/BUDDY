@@ -16,7 +16,7 @@ const Signup = () => {
             </div>
             <div className={styles.signupdetailField}>
                 <label>Password: </label>
-                <input type="password" />
+                <input type="password" placeholder="Your Paassword"/>
             </div>
             <div className={styles.gender} >
                 <label>Gender: </label>

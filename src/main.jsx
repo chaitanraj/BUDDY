@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import Home from './Home/home'
 import Signup from './Signup/signup.jsx'
 import Loginresult from './Loginresult/Loginresult.jsx'
+import Login from './Login/Login.jsx'
 
 
 export const mystyle = (imageurl) => ({
@@ -35,9 +36,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: <>
       <div className="body" style={mystyle("bckgrnd2.jpg")} >
-        <Navbar />
-        <Card />
-        <Footer />
+        <Login/>
       </div>
     </>
 

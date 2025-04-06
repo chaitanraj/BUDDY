@@ -5,18 +5,16 @@
   padding: 3vh;
   margin-top: 4vh;
   border-radius: 30px;
-  background: #212121;
+  background-color: rgba(0,0,0,0.8);
   box-shadow: 15px 15px 30px rgb(25, 25, 25),
     -15px -15px 30px rgb(60, 60, 60);
   color: white;
   display: inline-block;
   transition: transform 0.1s ease-in-out;
-  opacity: 0.9;
 }
 
 .login:hover {
   transform: scale(1.02);
-
 }
 
 .loginheader {

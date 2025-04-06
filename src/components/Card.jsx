@@ -39,7 +39,7 @@ const Card = () => {
             </div>
             <div className={styles.detailField}>
                 <label>Password: </label>
-                <input type="password" />
+                <input type="password" placeholder="Your Paassword"/>
             </div>
             <div className={styles.submitbtn}>
                 <button className={styles.btn17}>
