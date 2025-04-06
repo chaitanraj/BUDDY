@@ -65,7 +65,7 @@
     }
 
     .tagLine {
-        display: none; 
+        font-size: 0.85rem;
     }
 
     .navbar .navlink {
@@ -74,13 +74,14 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
     .img {
         max-width: 40px;
     }
 
     .tagLine {
-        font-size: 0.85rem;
+        /* font-size: 0.85rem; */
+        display: none;
     }
 
     .navbar .navlink {
