@@ -1,0 +1,51 @@
+ .top{
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    gap: 10rem;              
+    height: 80vh;
+    flex-wrap: wrap; 
+}
+
+
+  .card-container {
+    position: relative;
+    width: 12rem;   
+    height: 16rem;  
+    background-color: #3d3c3d;
+    background-color: rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .card-content {
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    inset: 2px;
+    background-color: #323132;
+    border-radius: 1rem;
+    opacity: 0.9;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .card-glow {
+    position: absolute;
+    width: 14rem;   
+    height: 12rem;  
+    background-color: white;
+    filter: blur(50px);
+    top: -50%;
+    left: -50%;
+  }
+  
+
+ 
+ 
+  
+  

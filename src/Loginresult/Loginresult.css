@@ -18,7 +18,9 @@
   transform: scale(1.02);
 
 }
-
+.resultcard{
+  margin-top: 20vh;
+}
 .resultheader {
   text-align: center;
   text-decoration: underline;

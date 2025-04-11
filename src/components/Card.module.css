@@ -75,6 +75,7 @@
 }
 .logincard{
   display: flex;
+  margin-top: 14vh;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;

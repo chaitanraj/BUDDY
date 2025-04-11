@@ -8,10 +8,10 @@ const Navbar = () => {
         <div className={styles.navbar}>
             <div className={styles.logoItem}>
                 <img className={styles.img} src={logo} alt="Let's find you a buddy" />
-                <div className={styles.logoItem}>BUDDY</div>              
+                <div className={styles.logoItem}>CyberOps</div>            
             </div>
             <div className={styles.tagLine}>
-           LET'S FIND YOUR RIDE PARTNER</div>
+           Keep your data SAFE!</div>
             <div className={styles.aTag}>
                 <NavLink to="/" className={styles.navlink}>Home</NavLink>
                 <NavLink to="/about" className={styles.navlink}>About</NavLink>

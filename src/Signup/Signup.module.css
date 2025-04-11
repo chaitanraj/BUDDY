@@ -23,13 +23,6 @@
   text-align: center;
 }
 
-.gender {
-  display: flex;
-  font-size: large;
-  font-weight: bold;
-  margin-bottom: 0.8rem;
-  flex-wrap: wrap;
-}
 
 .radiobtn {
   margin-left: 25px;
@@ -65,7 +58,9 @@
 
 
 }
-
+.submitbtn{
+  padding: 1.5rem;
+}
 
 .signupdetailField input[type="radio"] {
   margin-left: 5px;

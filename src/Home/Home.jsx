@@ -10,14 +10,14 @@ const Home = () => {
         <div className={styles.container1}>  
             <div className={styles.body1}>  
                 <div className={styles.tagwrapper}>
-                <h1 className={styles.heading}>Welcome to BUDDY!!!</h1>
+                <h1 className={styles.heading}>Welcome to Cyber-Ops!</h1>
                 </div>
                 <div className={styles.h3conatiner}>
                 <h3 className={styles.descriptionbuddy}>
-                    BUDDY is your one-stop destination for finding a cab partner for that lonely ride.
-                    Carpooling has never been this easy! <br />
-                    Just enter your ride details, and we’ll let you know if or when there’s a partner on the same route as yours. <br />
-                    SIGN UP and let's get started!
+                    We will help you find out if that URL you are using a bit too often is safe for you or  <br />
+                    if you shouldn't trust it with your sensitive data. <br />
+                    <br></br>
+                    Just SIGN UP and let's get started!
                 </h3>
                 </div>
                 <div className={styles.optionsbutton}>  

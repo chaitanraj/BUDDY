@@ -5,12 +5,12 @@ import App from './App.jsx'
 import Navbar from './components/navbar'
 import Card from './components/Card.jsx'
 import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom'
-import Map from './components/Map'
 import Footer from './components/Footer'
 import Home from './Home/home'
 import Signup from './Signup/signup.jsx'
 import Loginresult from './Loginresult/Loginresult.jsx'
 import Login from './Login/Login.jsx'
+import About from './About/About.jsx'
 
 
 export const mystyle = (imageurl) => ({
@@ -26,7 +26,7 @@ export const mystyle = (imageurl) => ({
 const router = createBrowserRouter([
   {//home
     path: "/",
-    element: <> <div className="bodyimage" style={mystyle("trafficblack2.jpg")} >
+    element: <> <div className="bodyimage" style={mystyle("network.jpg")} >
       <Navbar /> <Home />
       <Footer />
     </div> </>
@@ -35,8 +35,10 @@ const router = createBrowserRouter([
   {//login page
     path: "/login",
     element: <>
-      <div className="body" style={mystyle("bckgrnd2.jpg")} >
-        <Login/>
+      <div className="body" style={mystyle("laptop4.jpg")} >
+      <Navbar />
+        <Card />
+        <Footer />
       </div>
     </>
 
@@ -44,7 +46,7 @@ const router = createBrowserRouter([
   {//signup page
     path: "/signup",
     element: <>
-      <div className="body" style={mystyle("trafficlate.jpg")} >
+      <div className="body" style={mystyle("system.jpg")} >
         <Navbar />
         <Signup />
         <Footer />
@@ -53,11 +55,22 @@ const router = createBrowserRouter([
 
   },
     {//login result page
-      path: "/about",
+      path: "/contact",
       element: <>
-        <div className="body" style={mystyle("street1.jpg")} >
+        <div className="body" style={mystyle("network3.jpg")} >
           <Navbar />
           <Loginresult/>
+          <Footer />
+        </div>
+      </>
+  
+    },
+    {//about page
+      path: "/result",
+      element: <>
+        <div className="body" style={mystyle("laptop5.jpg")} >
+          <Navbar />
+          <About/>
           <Footer />
         </div>
       </>
