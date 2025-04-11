@@ -19,7 +19,7 @@ const Card = () => {
 
             const data = await res.json();
             if (res.ok) {
-                 alert("Login successful!");
+                //  alert("Login successful!");
                 console.log(data);
                 navigate("/result");
             } else {

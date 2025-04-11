@@ -20,5 +20,5 @@ mongoose
 app.use("/api", require("./routes/auth"));
 // Start server
 app.listen(PORT, () => {
-  console.log('🚀 Server running on http:localhost:${port}');
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

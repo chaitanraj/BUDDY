@@ -21,7 +21,8 @@ const Signup = () => {
     e.preventDefault();
     
   const { name, email, password, gender } = formData;
-    if (!name || !email || !password || !gender) {
+    if (!name || !email || !password || !gender) 
+      {
       alert("Please fill in all the fields.");
       return;
     }
