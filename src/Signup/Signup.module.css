@@ -4,13 +4,14 @@
   padding: 3vh;
   margin-top: 4vh;
   border-radius: 30px;
-  background: #212121;
+  /* background: #212121; */
   box-shadow: 15px 15px 30px rgb(25, 25, 25),
     -15px -15px 30px rgb(60, 60, 60);
   color: white;
+  background-color: rgba(0,0,0,0.8);
   display: inline-block;
   transition: transform 0.1s ease-in-out;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 
 .signup:hover {
@@ -55,7 +56,6 @@
 
 .signupdetailField input {
   width: 90%;
-
   padding: 0.5rem;
   font-size: 1rem;
   border: 0.1rem solid #ffffff;
@@ -137,6 +137,8 @@
   padding: 0.8rem 3rem;
   display: flex;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn17,
@@ -202,7 +204,7 @@
   background: #ffffff;
   content: "";
   display: block;
-  height: 102%;
+  height: 100%;
   left: calc(-50% - 50% * var(--skew));
   pointer-events: none;
   position: absolute;
