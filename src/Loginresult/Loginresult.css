@@ -253,3 +253,62 @@
   }
   
 }
+
+.result-box {
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  font-weight: bold;
+}
+
+.result-box.safe {
+  background-color: #d4edda;
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.result-box.danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
+
+.loading-spinner {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  border: 5px solid #999;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.error-box {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ffdddd;
+  color: #a00;
+  border: 1px solid #ffaaaa;
+  border-radius: 5px;
+  text-align: center;
+}
+

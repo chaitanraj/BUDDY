@@ -16,6 +16,9 @@ mongoose
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
+  app.use("/api/url", require("./routes/urlRoutes"));
+
+
 // Sample route for testing
 app.use("/api", require("./routes/auth"));
 // Start server
