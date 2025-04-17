@@ -21,7 +21,7 @@ const Signup = () => {
     e.preventDefault();
     
   const { name, email, password, gender } = formData;
-    if (!name || !email || !password || !gender) 
+    if (!name || !email || !password) 
       {
       alert("Please fill in all the fields.");
       return;
@@ -77,27 +77,6 @@ const Signup = () => {
               value={formData.password}
               onChange={handleChange}
             />
-          </div>
-          <div className={styles.gender}>
-            <label>Gender: </label>
-            <div className={styles.radiobtn}>
-              <label>Male </label>
-              <input
-                type="radio"
-                name="gender"
-                value="male"
-                checked={formData.gender === "male"}
-                onChange={handleChange}
-              />
-              <label>Female </label>
-              <input
-                type="radio"
-                name="gender"
-                value="female"
-                checked={formData.gender === "female"}
-                onChange={handleChange}
-              />
-            </div>
           </div>
           <div className={styles.submitbtn}>
             <button className={styles.btn17} type="submit">

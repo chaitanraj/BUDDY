@@ -1,30 +1,3 @@
-// import React, { useState } from 'react';
-// import "./Loginresult.css";
-
-// const Loginresult = () => {
-
-//   return (
-//    <div className="resultcard">
-//            <div className="result">
-//                <h1 className="resultheader">Enter URL</h1>
-//                 <div className="resultfield">
-//                    <label>URL: </label>
-//                    <input type="text" placeholder="Enter your URL" />
-//                </div>
-//                <div className="submitbtn">
-//                    <button className="btn17">
-//                        <span className="textcontainer">
-//                            <span className="text">Is it a phish?</span>
-//                        </span>
-//                    </button>
-//                </div>
-//            </div>
-//            </div>
-//   )
-// }
-
-// export default Loginresult
-
 import React, { useState } from 'react';
 import './Loginresult.css'; 
 
