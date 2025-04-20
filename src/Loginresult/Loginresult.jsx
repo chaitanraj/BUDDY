@@ -1,65 +1,125 @@
-import React, { useState } from 'react';
-import './Loginresult.css'; 
+
+
+import React, { useState, useEffect } from 'react';
+import './Loginresult.css';
 
 const Loginresult = () => {
-  const [url, setUrl] = useState('');
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState({ res: false, malicious: false, message: '' });
+  const [phishmode, setPhishmode] = useState("site");
+  const [isloading, setIsloading] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [mailContent, setMailContent] = useState('');
+  const [error, setError] = useState('');
 
-  const handleCheckPhish = async () => {
-    setLoading(true);
-    setResult(null);
+  useEffect(() => {
+    if (phishmode === "site" && inputValue.trim() === "") {
+      setResult({ res: false, malicious: false, message: '' });
+    } else if (phishmode === "mail" && mailContent.trim() === "") {
+      setResult({ res: false, malicious: false, message: '' });
+    }
+  }, [inputValue, mailContent, phishmode]);
+
+  const handleModeChange = (mode) => {
+    setPhishmode(mode);
+    setResult({ res: false, malicious: false, message: '' });
+    setError('');
+  };
+
+  const validateInput = () => {
+    if (phishmode === "site") {
+      if (!inputValue.trim()) {
+        setError("URL is required");
+        return false;
+      }
+    } else {
+      if (!mailContent.trim()) {
+        setError("Content is required");
+        return false;
+      }
+    }
+    setError('');
+    return true;
+  };
+
+  const handleCheck = async () => {
+    if (!validateInput()) return;
+
+    setIsloading(true);
+    setResult({ res: false, malicious: false, message: '' });
+
     try {
-      const response = await fetch('http://localhost:5000/api/url', {
+      const endpoint = phishmode === "site" ? "api/url" : "api/mail";
+      const payload = phishmode === "site"
+        ? { url: inputValue, userId: "guest" }
+        : { mailContent: mailContent, userId: "guest" };
+
+      const response = await fetch(`http://localhost:5000/${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url, userId: "guest" }), 
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
-      setResult(data);
+
+      setResult({
+        res: true,
+        malicious: data.isMalicious || false,
+        message: data.message || 'No message returned'
+      });
     } catch (error) {
       console.error('Error:', error);
-      setResult({ error: 'Failed to check URL' });
+      setResult({
+        res: true,
+        malicious: true,
+        message: 'Error connecting to the server'
+      });
+    } finally {
+      setIsloading(false);
     }
-    setLoading(false);
   };
 
   return (
     <div className="resultcard">
       <div className="result">
-        <h1 className="resultheader">Enter URL</h1>
+        <h1 className="resultheader">Phishing Detection</h1>
         <div className="resultfield">
-          <label>URL:</label>
-          <input
-            type="text"
-            placeholder="Enter your URL"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
+          {phishmode === "site" && (
+            <>
+              <label>URL:</label>
+              <input
+                type="url"
+                placeholder="Enter website URL to check"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+              />
+            </>
+          )}
         </div>
 
+        {error && <div className="error-message">{error}</div>}
+
         <div className="submitbtn">
-          <button className="btn17" onClick={handleCheckPhish}>
+          <button
+            className="btn17"
+            onClick={handleCheck}
+            disabled={isloading}
+          >
             <span className="textcontainer">
-              <span className="text">Is it a phish?</span>
+              <span className="text">
+                {isloading ? "Checking..." : "Is it a phish?"}
+              </span>
             </span>
           </button>
         </div>
 
-        {loading && <div className="loading-spinner">Checking...</div>}
+        {isloading && <div className="loading-spinner">Processing request...</div>}
 
-        {result && !result.error && (
-          <div className={`result-box ${result.isMalicious ? 'danger' : 'safe'}`}>
-            <h2>{result.message}</h2>
-          </div>
-        )}
-
-        {result?.error && (
-          <div className="error-box">
-            <p>{result.error}</p>
+        {result.res && (
+          <div className={`result-box ${result.malicious ? 'danger' : 'safe'}`}>
+            <h2>{result.malicious ? "⚠ Caution!" : "✔ Secure!"}</h2>
+            <p>{result.message}</p>
           </div>
         )}
       </div>

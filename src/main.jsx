@@ -26,7 +26,7 @@ export const mystyle = (imageurl) => ({
 const router = createBrowserRouter([
   {//home
     path: "/",
-    element: <> <div className="bodyimage" style={mystyle("network.jpg")} >
+    element: <> <div className="bodyimage" style={mystyle("network11.jpg")} >
       <Navbar /> <Home />
       <Footer />
     </div> </>

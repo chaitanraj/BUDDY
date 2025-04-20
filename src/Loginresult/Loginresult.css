@@ -312,3 +312,108 @@
   text-align: center;
 }
 
+/* Mode Selection Buttons */
+.mode-selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.mode-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #333;
+  color: white;
+  border: 2px solid #555;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.mode-btn.active {
+  background: #007bff;
+  border-color: #0062cc;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+/* Textarea for mail content */
+.resultfield textarea {
+  width: 90%;
+  padding: 0.8rem;
+  font-size: 16px;
+  border: 1px solid #f4ebeb;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Error message style */
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* Update result box for better alignment */
+.result-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-box h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.result-box p {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+/* Disabled button state */
+.btn17:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading spinner inside button */
+.btn17 .loading-spinner-btn {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+/* Responsive for mail mode */
+@media screen and (max-width: 900px) {
+  .resultfield textarea {
+    padding: 0.7rem;
+    min-height: 80px;
+  }
+  
+  .mode-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}

@@ -7,18 +7,18 @@ const About = () => {
         <>
             <div className='top'>
                 <div className="card-container">
-                <div className="card-content">
+                <div className="card">
                     <p>Chaitanya Raj <br></br> E23CSEU1691</p>
                 </div>
             </div>
             <div className="card-container">
-                <div className="card-content">
-                    Samarth Mittal <br></br> E23CSEU1690
+                <div className="card">
+                    <p>Samarth Mittal <br></br> E23CSEU1690</p>
                 </div>
             </div>
             <div className="card-container">
-                <div className="card-content">
-                    ROBIN <br></br> E23CSEU1684
+                <div className="card">
+                  <p>  Robin <br></br> E23CSEU1684</p>
                 </div>
             </div>
               </div>
