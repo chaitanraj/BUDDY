@@ -20,9 +20,11 @@ const Home = () => {
                     Just SIGN UP and let's get started!
                 </h3>
                 </div>
+                <div className="userbutton">
                 <div className={styles.optionsbutton}>  
                     <button onClick={()=>navigate("/login")} className={styles.button1}>LOGIN</button>
                     <button onClick={()=>navigate("/signup")} className={styles.button1}>SIGN-UP</button>
+                </div>
                 </div>
             </div>
         </div>

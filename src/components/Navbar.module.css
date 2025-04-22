@@ -36,7 +36,7 @@
 }
 .tagLine {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-shadow: 20px 5px 6px rgba(0, 0, 0, 1.0);
     margin-left: auto; 
@@ -77,19 +77,23 @@
 @media screen and (max-width: 600px) {
     .img {
         max-width: 40px;
-    }
-
-    .tagLine {
-        /* font-size: 0.85rem; */
-        display: none;
+        width: 6vw;
+        height: 3vh;
     }
 
     .navbar .navlink {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
         margin: 0.25rem;
+    }
+    
+    .navlink {
+        font-size: 0.65rem;
+        margin: 0.25rem;
+        font-weight: 400;
     }
 
     .logoItem {
-        font-size: 1rem;
+        gap: 0rem;
+        font-size: 0.5rem;
     }
 }

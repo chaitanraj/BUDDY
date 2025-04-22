@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Signup.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,6 +38,7 @@ const Signup = () => {
       const data = await res.json();
       if (res.ok) {
         alert("Signup successful!");
+        navigate("/")
       } else {
         alert(data.message || "Signup failed");
       }

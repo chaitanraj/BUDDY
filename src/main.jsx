@@ -56,7 +56,8 @@ const router = createBrowserRouter([
   },
     {//login result page
       path: "/result",
-      element: <>
+      element: 
+      <>
         <div className="body" style={mystyle("network3.jpg")} >
           <Navbar />
           <Loginresult/>
@@ -67,7 +68,8 @@ const router = createBrowserRouter([
     },
     {//about page
       path: "/about",
-      element: <>
+      element: 
+      <>
         <div className="body" style={mystyle("laptop5.jpg")} >
           <Navbar />
           <About/>

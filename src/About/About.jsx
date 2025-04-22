@@ -16,11 +16,6 @@ const About = () => {
                     <p>Samarth Mittal <br></br> E23CSEU1690</p>
                 </div>
             </div>
-            <div className="card-container">
-                <div className="card">
-                  <p>  Robin <br></br> E23CSEU1684</p>
-                </div>
-            </div>
               </div>
 
         </>
