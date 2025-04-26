@@ -2,15 +2,17 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import Card from './components/Card.jsx'
 import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom'
 import Footer from './components/Footer'
-import Home from './Home/home'
+import Home from './Home/Home'
 import Signup from './Signup/signup.jsx'
 import Loginresult from './Loginresult/Loginresult.jsx'
 import Login from './Login/Login.jsx'
 import About from './About/About.jsx'
+import History from './History/History.jsx'
+import { AuthProvider } from './context/AuthContext';
 
 
 export const mystyle = (imageurl) => ({
@@ -24,6 +26,7 @@ export const mystyle = (imageurl) => ({
 
 
 const router = createBrowserRouter([
+  
   {//home
     path: "/",
     element: <> <div className="bodyimage" style={mystyle("network11.jpg")} >
@@ -77,12 +80,26 @@ const router = createBrowserRouter([
         </div>
       </>
   
+    },
+     {//history page
+      path: "/history",
+      element: 
+      <>
+        <div className="body" style={mystyle("network7.jpg")} >
+          <Navbar />
+          <History/>
+          <Footer />
+        </div>
+      </>
+  
     }
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+     <AuthProvider>
     <RouterProvider router={router}>
       <App />
     </RouterProvider>
+    </AuthProvider>
   </StrictMode>
 )

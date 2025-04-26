@@ -1,26 +1,42 @@
-const JWT = require("jsonwebtoken");
-const { models } = require("mongoose");
+const jwt = require("jsonwebtoken");
+const JWT_SECRET = process.env.JWT_SECRET || "ronaldo123";
 
 module.exports = async (req, res, next) => {
-  try {
-    const token = req.headers["authorization"].split(" ")[1];
-    JWT.verify(token, process.env.JWT_SECRET, (err, decode) => {
-      if (err) {
-        return res.status(401).send({
-          success: false,
-          message: "Auth failed",
+    try {
+        const authHeader = req.headers["authorization"];
+
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
+            return res.status(401).json({
+                success: false,
+                message: "No token provided"
+            });
+        }
+
+        const token = authHeader.split(" ")[1];
+
+        jwt.verify(token, JWT_SECRET, (err, decoded) => {
+            if (err) {
+                return res.status(401).json({
+                    success: false,
+                    message: "Invalid token"
+                });
+            }
+
+            req.user = {
+                id: decoded.id,
+                username: decoded.username,
+                email: decoded.email
+            };
+
+            next();
         });
-      } else {
-        req.body.userId = decode.userId;
-        next();
-      }
-    });
-  } catch (error) {
-    console.log(error);
-    return res.status(401).send({
-      success: false,
-      error,
-      message: "Auth failed",
-    });
-  }
+
+    } catch (error) {
+        console.error("Auth Middleware Error:", error);
+        return res.status(401).json({
+            success: false,
+            message: "Authentication failed",
+            error
+        });
+    }
 };

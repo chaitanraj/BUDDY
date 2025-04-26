@@ -31,10 +31,10 @@
 
 .navbar .navlink:hover {
     color: #6e69e9;
-    /* text-decoration: underline; */
     transform: scale(1.2);
 }
 .tagLine {
+    background: rgba(0, 0, 0, 0.7);
     text-align: center;
     font-size: 1.2rem;
     font-weight: 600;

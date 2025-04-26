@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import {jwtDecode} from "jwt-decode";
 import './Loginresult.css';
 
 const Loginresult = () => {
@@ -8,6 +10,7 @@ const Loginresult = () => {
   const [inputValue, setInputValue] = useState('');
   const [mailContent, setMailContent] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (phishmode === "site" && inputValue.trim() === "") {
@@ -16,6 +19,30 @@ const Loginresult = () => {
       setResult({ res: false, malicious: false, message: '' });
     }
   }, [inputValue, mailContent, phishmode]);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate("/");
+      return;
+    }
+
+    try {
+      const decoded = jwtDecode(token);
+      const currentTime = Date.now() / 1000;
+
+      if (decoded.exp < currentTime) {
+        localStorage.clear();
+        alert("Session expired. Please log in again.");
+        navigate("/");
+      }
+    } catch (err) {
+      console.error("Invalid token:", err);
+      localStorage.clear();
+      navigate("/");
+    }
+  }, [navigate]);
 
   const handleModeChange = (mode) => {
     setPhishmode(mode);
@@ -82,6 +109,22 @@ const Loginresult = () => {
     <div className="resultcard">
       <div className="result">
         <h1 className="resultheader">Phishing Detection</h1>
+{/*         
+        <div className="mode-toggle">
+          <button 
+            className={phishmode === "site" ? "active" : ""} 
+            onClick={() => handleModeChange("site")}
+          >
+            Check Website
+          </button>
+          <button 
+            className={phishmode === "mail" ? "active" : ""} 
+            onClick={() => handleModeChange("mail")}
+          >
+            Check Email
+          </button>
+        </div> */}
+        
         <div className="resultfield">
           {phishmode === "site" && (
             <>
@@ -91,6 +134,18 @@ const Loginresult = () => {
                 placeholder="Enter website URL to check"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
+              />
+            </>
+          )}
+          
+          {phishmode === "mail" && (
+            <>
+              <label>Email Content:</label>
+              <textarea
+                placeholder="Paste email content to check"
+                value={mailContent}
+                onChange={(e) => setMailContent(e.target.value)}
+                rows={5}
               />
             </>
           )}

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import styles from '../components/Card.module.css';
 import { useNavigate } from "react-router-dom";
-
 
 const Card = () => {
     const [email, setEmail] = useState("");
@@ -16,11 +15,18 @@ const Card = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
             });
-
+    
             const data = await res.json();
             if (res.ok) {
-                //  alert("Login successful!");
-                console.log(data);
+                // 🧹 Clear previous session
+                localStorage.removeItem("token");
+                localStorage.removeItem("username");
+    
+                // ✅ Save fresh token and username
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("username", data.username);
+    
+                // ✅ Navigate to home
                 navigate("/result");
             } else {
                 alert(data.message || "Login failed");
@@ -30,6 +36,8 @@ const Card = () => {
             alert("Server error");
         }
     };
+    
+
     return (
         <div className={styles.logincard}>
             <div className={styles.login}>
@@ -62,9 +70,9 @@ const Card = () => {
                         </button>
                     </div>
                 </form>
-                </div>
-                </div>
-                );
-}
+            </div>
+        </div>
+    );
+};
 
 export default Card;

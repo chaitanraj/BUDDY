@@ -1,5 +1,15 @@
+@font-face {
+  font-family: "SF Pro";
+  src: url("./assets/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+  font-style: italic;
+}
+
 :root {
   --typing-width: 17ch;
+}
+
+.body1 {
+  background-color: none;
 }
 
 .tagwrapper {
@@ -22,7 +32,7 @@
   border-right: 10px solid white;
   width: 0ch;
   -webkit-text-stroke: 2px black;
-  animation: typing 6s steps(21, end) infinite alternate,
+  animation: typing 6s steps(23, end) infinite alternate,
     blink 1s infinite;
 }
 
@@ -32,7 +42,7 @@
   }
 
   50% {
-    width: 21ch;
+    width: 23ch;
   }
 
   100% {
@@ -50,22 +60,25 @@
   }
 }
 
-.h3container {
+/* .h3container {
   background: rgba(0, 0, 0, 100);
-}
+} */
 
 .descriptionbuddy {
   margin-top: 10vh;
   color: white;
   text-align: center;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   justify-items: center;
   font-size: x-large;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 10);
-  font-weight: 900;
+  font-weight: 800;
+  
+  font-family: "SF Pro", sans-serif; 
 }
 
 .optionsbutton {

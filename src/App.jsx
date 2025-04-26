@@ -1,9 +1,9 @@
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import Login from './components/Card'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Footer from './components/Footer'
-import Home from './Home/home'
+import Home from './Home/Home'
 
 
 function App() {
