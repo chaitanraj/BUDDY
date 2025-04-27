@@ -83,6 +83,26 @@ body, html {
   font-family: "SF Pro", sans-serif; 
 }
 
+.descriptionbuddy h2{
+  margin-bottom: 10vh;
+  font-size: 3rem;
+  color: antiquewhite;
+  animation: growShrink 0.8s ease-in-out infinite;
+  display: inline-block; 
+}
+@keyframes growShrink {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+
 .optionsbutton {
   display: flex;
   justify-content: center;
@@ -187,8 +207,8 @@ body, html {
 }
 .infocard {
   display: flex;
-  
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(16, 15, 15, 0.6);
+  /* background: rgba(255, 255, 255, 0.05); */
   border-radius: 30px;
   padding: 20px;
   gap: 2vw;
@@ -246,8 +266,8 @@ body, html {
 }
 .infocard2 {
   display: flex;
-  
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(16, 15, 15, 0.5);
+  /* background: rgba(0, 0, 0, 0.05); */
   border-radius: 30px;
   padding: 20px;
   gap: 2vw;
@@ -290,7 +310,8 @@ body, html {
 }
 
 .masterinfo{
-  margin-top: 10vh;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
   display: flex;
   flex-direction: column;
   gap: 10vh;

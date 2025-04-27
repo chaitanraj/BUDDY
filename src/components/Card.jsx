@@ -26,8 +26,8 @@ const Card = () => {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("username", data.username);
     
-                // ✅ Navigate to home
-                navigate("/result");
+              
+                navigate("/");
             } else {
                 alert(data.message || "Login failed");
             }

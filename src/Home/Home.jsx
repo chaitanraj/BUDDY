@@ -36,11 +36,18 @@ const Home = () => {
                     <>
                         {/* <div className={styles.h3container}> */}
                         <h3 className={styles.descriptionbuddy}>
+                             <h2>  Welcome , {username}! 🚀 </h2>
                             We will help you find out if that URL you are using a bit too often is safe for you or  <br />
                             if you shouldn't trust it with your sensitive data. <br />
                             <br></br>
-                            <h2>  Welcome , {username}! 🚀 </h2>
+                           
                         </h3>
+                        <div className="userbutton">
+                            <div className={styles.optionsbutton}>
+                                <button onClick={() => navigate("/result")} className={styles.button1}>Check URL!</button>
+                                
+                            </div>
+                        </div>
 
                     </>
 

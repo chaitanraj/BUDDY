@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <> <div className="bodyimage" style={mystyle("network11.jpg")} >
       <Navbar /> <Home />
-      <Footer />
+      <Footer isHomePage={true}/>
     </div> </>
   },
 

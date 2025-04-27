@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Footer.css"
-const Footer = () => {
+const Footer = ({ isHomePage }) => {
     return (
-        <div className='footer'>
+        <div className='footer'  style={{ position: isHomePage ? 'relative' : 'fixed' }}>
             <p> Copyright &copy; ChaitanyaRaj.com|All rights reserved</p>
             <div>
                 <ul className="example-2">

@@ -9,7 +9,7 @@
     color: beige;
     width: 100vw;
     bottom: 0;
-    /* position: fixed; */
+    position: fixed;
     font-size:1.5rem;
 }
 
