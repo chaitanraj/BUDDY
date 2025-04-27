@@ -17,11 +17,15 @@ import { AuthProvider } from './context/AuthContext';
 
 export const mystyle = (imageurl) => ({
   width: "100vw",
-  height: "100vh",
+  height: "auto", 
+  minHeight: "100vh", 
   backgroundImage: `url(${imageurl})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
+  backgroundAttachment: "fixed",
+  overflowX: "hidden", 
+  position: "relative",
 });
 
 

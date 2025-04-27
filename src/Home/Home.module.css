@@ -1,3 +1,9 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
 @font-face {
   font-family: "SF Pro";
   src: url("./assets/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
@@ -60,10 +66,6 @@
   }
 }
 
-/* .h3container {
-  background: rgba(0, 0, 0, 100);
-} */
-
 .descriptionbuddy {
   margin-top: 10vh;
   color: white;
@@ -123,6 +125,12 @@
 }
 
 
+.imageContainer {
+  order: 2;
+}
+
+
+
 @media screen and (max-width: 800px) {
   .descriptionbuddy {
     font-weight: lighter;
@@ -164,3 +172,205 @@
     gap: 3vh;
   }
 }
+
+.infosection {
+  /* font-family: "SF Pro", sans-serif;  */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  padding: 20px;
+}
+.infotext p{
+  /* font-family: "SF Pro", sans-serif;  */
+  font-size: 2rem;
+  font-weight: 500;
+}
+.infocard {
+  display: flex;
+  
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  padding: 20px;
+  gap: 2vw;
+  color: white;
+  font-size: 2em;
+  width: 100%;
+  /* max-width: 1200px;  */
+}
+
+.infocard div:first-child {
+  flex: 1; /* image side */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infocard img {
+  border-radius: 10px;
+  width: 20em; 
+  height: 20rem;
+  object-fit: contain; 
+}
+
+.infocard div:last-child {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.infocard h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.infocard div:first-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CSS FOR SECOND INFO DIV */
+
+.infosection2 {
+  /* font-family: "SF Pro", sans-serif;  */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  padding: 20px;
+}
+.infotext2 p{
+  /* font-family: "SF Pro", sans-serif;  */
+  font-size: 2rem;
+  font-weight: 500;
+}
+.infocard2 {
+  display: flex;
+  
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  padding: 20px;
+  gap: 2vw;
+  color: white;
+  font-size: 2em;
+  width: 100%;
+  /* max-width: 1200px;  */
+}
+
+.infocard2 div:last-child {
+  margin-left: 2vw;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infocard2 img {
+  width: 20em; 
+  height: 20rem;
+  object-fit: contain; 
+}
+
+.infocard2 div:first-child {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.infocard2 h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.infocard2 div:last-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.masterinfo{
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+
+@media (max-width: 1000px) {
+  .infocard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .infocard img {
+    /* width: 60%;
+    height: 50%; */
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .infotext p {
+    font-size: 1rem;
+  }
+  .infotext h2{
+    font-size: 1.5rem;
+
+  }
+  .infocard2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .infocard2 img {
+    /* width: 80%;
+    height: auto; */
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .infotext2  p {
+    font-size: 1rem;
+  }
+  .infotext2 h2{
+    font-size: 1.5rem;
+
+  }
+  .imageContainer {
+    order: 1;
+  }
+  
+}
+/* 
+@media (max-width: 650px) {
+  .infocard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .infocard img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .infotext  p {
+    font-size: 1.5rem;
+  }
+
+  .infocard2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .infocard2 img {
+    width: 30%;
+    height: 30%;
+  }
+
+  .infotext2  p {
+    font-size: 1.5rem;
+  }
+} */

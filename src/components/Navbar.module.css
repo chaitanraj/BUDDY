@@ -13,7 +13,9 @@
     position: relative;
     flex-wrap: wrap;
 }
-
+.aTag {
+    margin-right: 20px;
+}
 .img {
     max-width: 50px;
     height: auto;

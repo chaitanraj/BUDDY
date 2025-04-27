@@ -1,7 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext"; // Adjust the path if needed
+import { AuthContext } from "../context/AuthContext";
+import hacker from "../pics/hacker.jpg"
+import hacker2 from "../pics/hacker2.jpg"
+import hacker3 from "../pics/hacker3.jpg"
+import logo from "../pics/logo.png";
+
 
 const Home = () => {
     const navigate = useNavigate();
@@ -30,14 +35,13 @@ const Home = () => {
                 {isLoggedIn && username ? (
                     <>
                         {/* <div className={styles.h3container}> */}
-                            <h3 className={styles.descriptionbuddy}>
-                                We will help you find out if that URL you are using a bit too often is safe for you or  <br />
-                                if you shouldn't trust it with your sensitive data. <br />
-                                <br></br>
-                              <h2>  Welcome , {username}! 🚀 </h2>
-                            </h3>
-                        {/* </div> */}
-                   
+                        <h3 className={styles.descriptionbuddy}>
+                            We will help you find out if that URL you are using a bit too often is safe for you or  <br />
+                            if you shouldn't trust it with your sensitive data. <br />
+                            <br></br>
+                            <h2>  Welcome , {username}! 🚀 </h2>
+                        </h3>
+
                     </>
 
                 ) : (
@@ -58,6 +62,54 @@ const Home = () => {
                         </div>
                     </>
                 )}
+
+                <div className={styles.masterinfo}>
+
+                <div className={styles.infosection}>
+                    <div className={styles.infocard}>
+                        <div>
+                            <img src={hacker} alt="Shield" className={styles.infoicon} />
+                        </div>
+                        <div className={styles.infotext}>
+                            <h2>What is Phishing?</h2>
+                            <p>Phishing is a common type of cyber attack where attackers attempt to deceive individuals into revealing sensitive information, such as passwords, credit card numbers, or personal details.  Phishing can occur through emails, text messages, social media, or fake websites that closely mimic legitimate ones. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.infosection2}>
+                    <div className={styles.infocard2}>
+                       
+                        <div className={styles.infotext2}>
+                            <h2>Why is Phishing Dangerous?</h2> 
+                            <ul style={{ listStyleType: 'disc', marginLeft: '2vw' }}>
+
+                                <li>Identity theft</li>
+                                <li>Financial loss</li>
+                                <li>Compromise of personal and professional data</li>
+                                <li>Unauthorized access to bank accounts</li>
+                                <li>Malware installation</li>
+                            </ul> 
+                        </div>
+                     <div>
+                            <img src={hacker2} alt="Shield" className={styles.infoicon2} />
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.infosection}>
+                    <div className={styles.infocard}>
+                        <div className={styles.imageContainer}>
+                            <img src={hacker3} alt="Shield" className={styles.infoicon} />
+                        </div>
+                        <div className={styles.infotext}>
+                            <h2>How CyberOps Helps You?</h2>
+                            <p>CyberOps uses advanced URL analysis to determine if a website is safe to use.Protect yourself from cyber threats and browse the internet with confidence — all with just a few clicks. Just sign up, enter the URL you want to check, and stay protected!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
             </div>
         </div>
 
