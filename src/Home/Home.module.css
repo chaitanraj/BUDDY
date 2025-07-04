@@ -213,7 +213,7 @@ body, html {
   padding: 20px;
   gap: 2vw;
   color: white;
-  font-size: 2em;
+  font-size: 1.5em;
   width: 100%;
   /* max-width: 1200px;  */
 }
@@ -227,8 +227,8 @@ body, html {
 
 .infocard img {
   border-radius: 10px;
-  width: 20em; 
-  height: 20rem;
+  width: 18em; 
+  height: 18rem;
   object-fit: contain; 
 }
 
@@ -259,9 +259,9 @@ body, html {
   justify-content: center;
   padding: 20px;
 }
-.infotext2 p{
+.infotext2 h2{
   /* font-family: "SF Pro", sans-serif;  */
-  font-size: 2rem;
+  font-size: 15rem;
   font-weight: 500;
 }
 .infocard2 {
@@ -315,6 +315,15 @@ body, html {
   display: flex;
   flex-direction: column;
   gap: 10vh;
+}
+
+/* 3rd DIV */
+.infosection3 {
+  /* font-family: "SF Pro", sans-serif;  */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  padding: 20px;
 }
 
 @media (max-width: 1000px) {

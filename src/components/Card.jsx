@@ -18,11 +18,9 @@ const Card = () => {
     
             const data = await res.json();
             if (res.ok) {
-                // 🧹 Clear previous session
                 localStorage.removeItem("token");
                 localStorage.removeItem("username");
     
-                // ✅ Save fresh token and username
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("username", data.username);
     

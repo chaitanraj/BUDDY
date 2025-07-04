@@ -23,6 +23,7 @@ router.post("/signup", async (req, res) => {
     return res.status(201).json({ message: "User created" });
 });
 
+
 // Login route
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;

@@ -30,8 +30,7 @@ const Home = () => {
                 <div className={styles.tagwrapper}>
                     <h1 className={styles.heading}>Welcome to Cyber-Ops!!!</h1>
                 </div>
-
-
+                
                 {isLoggedIn && username ? (
                     <>
                         {/* <div className={styles.h3container}> */}
@@ -98,20 +97,20 @@ const Home = () => {
                                 <li>Malware installation</li>
                             </ul> 
                         </div>
-                     <div>
+                        <div>
                             <img src={hacker2} alt="Shield" className={styles.infoicon2} />
                         </div>
-                    </div>
                 </div>
-                <div className={styles.infosection}>
+                </div>
+                <div className={styles.infosection3}>
                     <div className={styles.infocard}>
-                        <div className={styles.imageContainer}>
-                            <img src={hacker3} alt="Shield" className={styles.infoicon} />
-                        </div>
                         <div className={styles.infotext}>
                             <h2>How CyberOps Helps You?</h2>
                             <p>CyberOps uses advanced URL analysis to determine if a website is safe to use.Protect yourself from cyber threats and browse the internet with confidence — all with just a few clicks. Just sign up, enter the URL you want to check, and stay protected!
                             </p>
+                        </div>
+                        <div className={styles.imageContainer}>
+                            {/* <img src={hacker3} alt="Shield" className={styles.infoicon} /> */}
                         </div>
                     </div>
                 </div>
